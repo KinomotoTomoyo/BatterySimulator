@@ -1,5 +1,5 @@
 ---
-Title: Markdown introduction - Developer Documentation
+Title: BatterySimulator
 Contributors: Lingding Zhang, Yang Jiang
 ---
 
