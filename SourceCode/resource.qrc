@@ -1,8 +1,0 @@
-<RCC>
-    <qresource prefix="/resources">
-        <file>img/lithium-ion-battery-vertical.png</file>
-        <file>img/SPM.jpg</file>
-        <file>img/P2D_halfCell.jpg</file>
-        <file>img/P2D_fullCell.jpg</file>
-    </qresource>
-</RCC>
