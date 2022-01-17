@@ -1,0 +1,95 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+
+// cell Zones
+    // anode
+    {
+        name    anodeCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (0    0   0 )(88e-6   30e-6  10e-6);//anode
+        }
+    }
+
+    {
+        name    anode;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set anodeCellSet;
+        }
+    }
+
+
+    // seperator
+    {
+        name    seperatorCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+
+            box (88e-6 0 0)(113e-6   30e-6  10e-6);//separator
+        }
+    }
+
+    {
+        name    seperator;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set seperatorCellSet;
+        }
+    }
+
+    // cathode
+    {
+        name    cathodeCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (113e-6 0 0)(193e-6   30e-6  10e-6);//cathode
+        }
+    }
+
+    {
+        name    cathode;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set cathodeCellSet;
+        }
+    }
+
+
+
+);

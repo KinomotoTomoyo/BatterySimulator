@@ -1,0 +1,56 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       volScalarField;
+    location    "0/gas";
+    object      G;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [ 0 0 0 0 0 0 0 ];
+
+internalField   uniform   4.2;
+
+boundaryField
+{
+    #includeEtc "caseDicts/setConstraintTypes"
+
+    cathodeCC
+    {
+        //type            fixedValue;
+        //value           uniform 10;
+        type            fixedGradient;
+        gradient        uniform -3.0;
+    }
+    frontAndBack
+    {
+        type            empty;
+    }
+    topAndBottom
+    {
+        type            empty;
+    }
+    cathode_to_seperator
+    {
+/*
+        type            compressible::turbulentTemperatureCoupledBaffleMixed;
+        value           $internalField;
+        Tnbr            G;
+        kappaMethod     lookup;
+        kappa           D_G;
+*/
+        type            zeroGradient; 
+    }
+
+}
+
+
+// ************************************************************************* //
