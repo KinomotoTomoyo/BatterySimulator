@@ -5,16 +5,18 @@ Contributors: Lingding Zhang, Yang Jiang
 
 # Statement
 Thanks for using this software!   
+This software is aimed to provide a user-friendly GUI for people who do not have strong battery or computer knowledge.To use this software, you must install OpenFOAM6 and ParaView5.4.0 on your computer as well.  
 You can get the software and whole codes on <a href="https://github.com/KinomotoTomoyo/BatterySimulator">this address</a>. This software is under GPLv3 which means you can use it free. However, you **cannot** use it for any commercial purpose.  
 The *BatterySimulator* folder contains two subfolders, *GUI* and *SourceCode*. If you just want to use the simulator, just ignore *SourceCode* folder.  
 The software is tested under ubuntu-18.04.6 environment, please ensure your system environment is higher than this one(ubuntu-20 is also acceptable).
 
 # Installation Guide
 1. Use `git clone` command to get the *BatterySimulator* folder or download the .zip file directly.
-2. Make sure OpenFOAM6 and ParaView5.4.0 are already installed on your computer correctly. If not, follow the steps on <a href="https://openfoam.org/download/6-ubuntu/">official site</a>.
-3. Make sure `make` module is installed on your computer correctly. If not, install it by command `sudo apt-get install make`.
-4. Find the file */opt/openfoam6/etc/controlDict* and open it. Find the line `dimensionSet 1;`(You can use `ctrl+f` to locate), then change `1` to `0` and save it.
-5. Open terminal under *GUI* folder and input `./BatterySimulator`, then you can use the software.
+2. You should get a folder called *BatterySimulator-main*. Open terminal and input command `sudo chmod -R 777 BatterySimulator-main`.
+3. Make sure OpenFOAM6 and ParaView5.4.0 are already installed on your computer correctly. If not, follow the steps on <a href="https://openfoam.org/download/6-ubuntu/">official site</a>.
+4. Make sure `make` module is installed on your computer correctly. If not, install it by command `sudo apt-get install make`.
+5. Find the file */opt/openfoam6/etc/controlDict* and open it. Find the line `dimensionSet 1;`(You can use `ctrl+f` to locate), then change `1` to `0` and save it.
+6. Open terminal under *GUI* folder and input `./BatterySimulator`, then you can use the software.
 
 # Usage guide
 The usage is very simple, you just need to follow the hints on the interface and you can run a project successfully.  
