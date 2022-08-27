@@ -27,4 +27,4 @@ There are only a few things that need a bit more explanation:
 4. Once you generated related results files through *Run/Resume* button on Control interface, you can click *View Results*. This will open a new interface, and you can view kinds of graphs intuitively.
 
 # Citing BatterySimulator
-Please notice that any academic work using this code or derivatives thereof, must cite the original paper that this code was released alongside.
+Please notice that any academic work using this code or derivatives thereof, **must** cite the original paper that this code was released alongside.
