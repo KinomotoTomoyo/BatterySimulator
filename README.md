@@ -5,7 +5,7 @@ Contributors: Lingding Zhang, Yang Jiang
 
 # Statement
 Welcome to use this simulator!   
-This simulator is aimed to provide a user-friendly GUI for people who do not have strong battery or computer knowledge.To use this simulator, you should install OpenFOAM6 and ParaView5.4.0 on your computer as well.  
+To use this simulator, you should install OpenFOAM6 and ParaView5.4.0 on your computer as well.  
 This simulator is under GPLv3 which means you can use it for free. However, you **cannot** use it for any commercial purpose. 
 The simulator has been tested successfully under ubuntu-18.04.6 environment, please ensure your system environment is higher than this one(ubuntu-20 is also acceptable).
 
@@ -26,4 +26,4 @@ There are only a few things that need a bit more explanations:
 4. Once you generated related results files through *Run/Resume* button on Control interface, you can click *View Results*. This will open a new interface, and you can view kinds of graphs intuitively.
 
 # Citing BatterySimulator
-Please notice that any academic work using this code or derivatives thereof, **_Must_** cite the original paper that this code was released alongside.
+Any academic work using this code or derivatives thereof, **_Must_** cite the original paper that this code was released alongside.
