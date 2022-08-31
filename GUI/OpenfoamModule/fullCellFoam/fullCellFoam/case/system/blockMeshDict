@@ -1,0 +1,110 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+convertToMeters 1e-6;//micrometer
+
+vertices
+(
+    (0 0 0)//anode_left node1
+    (0 30 0)//al node2
+    (0 30 10)//al node3
+    (0 0 10)//al node4
+
+    (88 0 0)//separator_left node1
+    (88 30 0)//sl node2
+    (88 30 10)//sl node3
+    (88 0 10)//sl node4
+
+    (113 0 0)//separator_right node1
+    (113 30 0)//sr node2
+    (113 30 10)//sr node3
+    (113 0 10)//sr node4
+
+    (193 0 0)//cathode_right node1
+    (193 30 0)//cr node2
+    (193 30 10)//cr node3
+    (193 0 10)//cr node4
+
+);
+
+blocks
+(
+    hex (0 4 5 1 3 7 6 2) (88 1 1) simpleGrading (1 1 1)//anode,88 microns
+    hex (4 8 9 5 7 11 10 6) (25 1 1) simpleGrading (1 1 1)//separator,25 microns
+    hex (8 12 13 9 11 15 14 10) (80 1 1) simpleGrading (1 1 1)//cathode,80 microns
+);
+
+edges
+(
+);
+
+boundary
+(
+    anodeCC
+    {
+        type patch;
+        faces
+        (
+            (0 3 2 1)
+        );
+    }
+
+    cathodeCC
+    {
+        type patch;
+        faces
+        (
+            (12 13 14 15)
+        );
+    }
+
+    frontAndBack//y axis
+    {
+        type empty;
+        faces
+        (
+            (0 4 7 3)
+            (4 8 11 7)
+            (8 12 15 11)
+
+            (1 2 6 5)
+            (5 6 10 9)
+            (9 10 14 13)
+
+        );
+    }
+    topAndBottom//z axis
+    {
+        type empty;//patch
+        faces
+        (
+            (0 1 5 4)
+            (4 5 9 8)
+            (8 9 13 12)
+
+            (3 7 6 2)
+            (7 11 10 6)
+            (11 15 14 10)
+
+        );
+    }
+);
+
+mergePatchPairs
+(
+);
+
+// ************************************************************************* //

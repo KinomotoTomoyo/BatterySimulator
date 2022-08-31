@@ -1,0 +1,85 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      topoSetDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+actions
+(
+
+// cell Zones
+    // solid phase particle
+
+   {
+     name  solidPhaseCellSet;
+     type cellSet;
+     action  new;
+     source  sphereToCell;
+     sourceInfo
+     {
+      centre (0  0  0);
+      radius 6e-06;
+     }
+   }
+
+    {
+        name    solidPhase;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set solidPhaseCellSet;
+        }
+    }
+
+    // electrolyte
+    {
+        name    eleCellSet;
+        type    cellSet;
+        action  new;
+        source  boxToCell;
+        sourceInfo
+        {
+            box (-10e-6   -10e-6   -10e-6 )(10e-6   10e-6  10e-6);
+        }
+    }
+
+    // electrolyte
+    {
+        name    eleCellSet;
+        type    cellSet;
+        action  delete;
+        source  cellToCell;
+        sourceInfo
+        {
+            set  solidPhaseCellSet;
+        }
+    }
+
+    {
+        name    ele;
+        type    cellZoneSet;
+        action  new;
+        source  setToCellZone;
+        sourceInfo
+        {
+            set eleCellSet;
+        }
+    }
+
+
+
+
+);

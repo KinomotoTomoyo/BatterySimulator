@@ -1,0 +1,43 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+por_Ce_WE            por_Ce_WE [0 -1 0 0 0 0 0] 0.485;
+por_Ce_sp            por_Ce_sp [0 -1 0 0 0 0 0] 0.724;
+por_f_WE             por_f_WE [0 -1 0 0 0 0 0] 0.0326;
+Cs_max_WE            Cs_max_WE [0 -1 0 0 0 0 0] 30555;
+brugg                brugg [0 -1 0 0 0 0 0] 4;
+R                    R [0 -1 0 0 0 0 0] 8.314472;
+F                    F [0 -1 0 0 0 0 0] 96485;
+tNo                  tNo [0 -1 0 0 0 0 0] 0.364;
+k0_fai_s_WE          k0_fai_s_WE [0 -1 0 0 0 0 0] 100;
+D0_Ce                D0_Ce [0 -1 0 0 0 0 0] 7.5e-10;
+r_s                  r_s [0 -1 0 0 0 0 0] 2.0e-6;
+Ds_WE                Ds_WE [0 -1 0 0 0 0 0] 3.9e-14;//3.9e-14
+kReact_WE            kReact_WE [0 -1 0 0 0 0 0] 5.031e-11;
+kReact_RE            kReact_RE [0 -1 0 0 0 0 0] 1.0e-4;// large rate constant to eliminate polarisation
+alphaA_WE            alphaA_WE [0 -1 0 0 0 0 0] 0.5;
+alphaC_WE            alphaC_WE [0 -1 0 0 0 0 0] 0.5;
+alphaA_RE            alphaA_RE [0 -1 0 0 0 0 0] 0.5;
+alphaC_RE            alphaC_RE [0 -1 0 0 0 0 0] 0.5;
+fai_s_RE             fai_s_RE [0 -1 0 0 0 0 0] 0;
+U_rev_RE             U_rev_RE [0 -1 0 0 0 0 0] 0;
+iRef_RE              iRef_RE [0 -1 0 0 0 0 0] 1;
+T_temp_ref           T_temp_ref [0 -1 0 0 0 0 0] 298.15;
+I_app                I_app [0 -1 0 0 0 0 0] 30; // positive when discharge
+
+
+// ************************************************************************* //

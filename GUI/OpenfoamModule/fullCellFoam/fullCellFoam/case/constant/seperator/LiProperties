@@ -1,0 +1,46 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Cs_max_a             Cs_max_a [0 -1 0 0 0 0 0] 30555;// Maximum Li concentration in anode, mol m-3
+Cs_max_c             Cs_max_c [0 -1 0 0 0 0 0] 51554;// Maximum Li concentration in cathode, mol m-3
+kReact_a             kReact_a [0 -1 0 0 0 0 0] 5.031e-11;// Reaction rate constant in anode, m2.5 mol-0.5 s-1
+kReact_c             kReact_c [0 -1 0 0 0 0 0] 2.334e-11;// Reaction rate constant in cathode, m2.5 mol-0.5 s-1
+alphaA_a             alphaA_a [0 -1 0 0 0 0 0] 0.5;//anodic transfer coefficient for anode
+alphaC_a             alphaC_a [0 -1 0 0 0 0 0] 0.5;//cathodic transfer coefficient for anode
+alphaA_c             alphaA_c [0 -1 0 0 0 0 0] 0.5;//anodic transfer coefficient for cathode
+alphaC_c             alphaC_c [0 -1 0 0 0 0 0] 0.5;//cathodic transfer coefficient for cathode
+R                     R [0 -1 0 0 0 0 0] 8.314472;// Universal gas constant, J mol-1 K-1
+F                     F [0 -1 0 0 0 0 0] 96485;// Faraday constnt, C mol-1
+por_Ce_a             por_Ce_a [0 -1 0 0 0 0 0] 0.485;// Volume fraction of electrolyte in anode
+por_Ce_sp            por_Ce_sp [0 -1 0 0 0 0 0] 0.724;// Volume fraction of electrolyte in separator
+por_Ce_c             por_Ce_c [0 -1 0 0 0 0 0] 0.385;// Volume fraction of electrolyte in cathode
+por_f_a              por_f_a [0 -1 0 0 0 0 0] 0.0326;// Volume fraction of filler in anode
+por_f_c              por_f_c [0 -1 0 0 0 0 0] 0.025;// Volume fraction of filler in cathode
+brugg                brugg [0 -1 0 0 0 0 0] 4;// bruggmann coefficient
+k0_fai_s_a           k0_fai_s_a [0 -1 0 0 0 0 0] 100;// Solid phase conductivity in anode, S m-1
+k0_fai_s_c           k0_fai_s_c [0 -1 0 0 0 0 0] 100;// Solid phase conductivity in cathode, S m-1
+D0_Ce                D0_Ce [0 -1 0 0 0 0 0] 7.5e-10;// Electrolyte diffusivity, m2 m-1
+tNo                  tNo [0 -1 0 0 0 0 0] 0.364;// Transference number
+Ds_a                 Ds_a [0 -1 0 0 0 0 0] 3.9e-14;// Lithium diffusivity in the solid phase in anode, m2 m-1
+Ds_c                 Ds_c [0 -1 0 0 0 0 0] 1.0e-13;// Lithium diffusivity in the solid phase in cathode, m2 m-1
+r_s_a                r_s_a [0 -1 0 0 0 0 0] 2.0e-6;// Solid particle size in anode, m
+r_s_c                r_s_c [0 -1 0 0 0 0 0] 2.0e-6;// Solid particle size in cathode, m
+I_app                I_app [0 -1 0 0 0 0 0] 30;// applied current density, A m-2, positive when discharge
+//V_out                V_out [0 -1 0 0 0 0 0] 3.3;
+
+
+
+// ************************************************************************* //

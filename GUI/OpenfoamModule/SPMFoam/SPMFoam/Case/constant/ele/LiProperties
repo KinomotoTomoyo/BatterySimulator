@@ -1,0 +1,29 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+  =========                 |
+  \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox
+   \\    /   O peration     | Website:  https://openfoam.org
+    \\  /    A nd           | Version:  6
+     \\/     M anipulation  |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "constant";
+    object      transportProperties;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Ds_value           Ds_value [0 -1 0 0 0 0 0] 3.9e-14;//m2/s
+Cs_max             Cs_max [0 -1 0 0 0 0 0] 30555; //mol m-3
+kReact             kReact [0 -1 0 0 0 0 0] 5.031e-11;
+R                  R [0 -1 0 0 0 0 0] 8.314472;
+F                  F [0 -1 0 0 0 0 0] 96485;
+Ce                 Ce [0 -1 0 0 0 0 0] 1000; //mol m-3
+alphaA             alphaA [0 -1 0 0 0 0 0] 0.5;
+alphaC             alphaC [0 -1 0 0 0 0 0] 0.5;
+T_temp             T_temp [0 -1 0 0 0 0 0] 298.15; //K
+I_app              I_app [0 -1 0 0 0 0 0] 1.35; //A m-2
+
+
+// ************************************************************************* //
